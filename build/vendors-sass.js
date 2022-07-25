@@ -101,7 +101,7 @@ const compileSass = (options = {}) => {
 
 const compile = (vendors) => {
   vendors.forEach((vendor) => {
-    const dest = resolve(__dirname, '..', 'src/vendors', vendor.dir, 'css', path.parse(vendor.path).name)
+    const dest = resolve(__dirname, '..', 'vendors', vendor.dir, 'css', path.parse(vendor.path).name)
     // Expanded
     compileSass({
       src : vendor.path,

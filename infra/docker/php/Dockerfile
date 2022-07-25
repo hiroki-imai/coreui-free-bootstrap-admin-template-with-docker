@@ -22,6 +22,7 @@ RUN apt-get update \
     libzip-dev \
     libicu-dev \
     libonig-dev \
+    nodejs npm && npm install \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && locale-gen en_US.UTF-8 \
@@ -49,7 +50,7 @@ COPY ./infra/docker/php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 FROM base AS deploy
 
 COPY ./infra/docker/php/php.deploy.ini /usr/local/etc/php/php.ini
-COPY ./src /data
+COPY . /data
 
 RUN composer install -q -n --no-ansi --no-dev --no-scripts --no-progress --prefer-dist \
   && chmod -R 777 storage bootstrap/cache \

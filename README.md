@@ -1,3 +1,13 @@
+# memo
+1. docker compose up -d --build
+2. docker compose exec app composer install
+3. cp .env.example .env
+4. docker compose exec app php artisan key:generate
+5. docker compose exec app php artisan storage:link
+6. docker compose exec app chmod -R 777 storage bootstrap/cache
+7. docker compose exec app npm install
+8. docker compose exec app npm run dev
+
 # CoreUI Free Laravel Bootstrap Admin Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?text=CoreUI%20-%20Free%20Bootstrap%204%20Admin%20Template%20&url=https://coreui.io&hashtags=bootstrap,admin,template,dashboard,panel,free,angular,react,vue)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
